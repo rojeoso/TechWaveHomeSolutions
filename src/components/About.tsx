@@ -11,7 +11,7 @@ const About = () => {
         <div className="about__content">
           {/* Section heading */}
           <div className="about__header text-center">
-            <h2 className="about__title">About TechWave Home Solutions</h2>
+            <h2 className="about__title">About Us</h2>
             <p className="about__subtitle">
               Veteran-owned business with over 40 years of combined experience
             </p>

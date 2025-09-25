@@ -22,60 +22,14 @@ const Hero = () => {
   }
 
   return (
-    <>
-      {/* Logo Banner Section */}
-      <section className="hero__logo-banner">
-        <div className="hero__logo-container">
-          <img
-            src="/logo.png"
-            alt="TechWave Home Solutions"
-            className="hero__logo-banner-image"
-          />
-        </div>
-      </section>
-
-      {/* Hero Content Section */}
-      <section id="hero" className="hero">
-        <div className="hero__backdrop">
-          <div className="hero__backdrop-images">
-            <div
-              className="hero__backdrop-item"
-              style={{backgroundImage: 'url("https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1")'}}
-            >
-              <div className="hero__backdrop-label">TV Mounting</div>
-            </div>
-            <div
-              className="hero__backdrop-item"
-              style={{backgroundImage: 'url("https://images.pexels.com/photos/164746/pexels-photo-164746.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1")'}}
-            >
-              <div className="hero__backdrop-label">Home Audio</div>
-            </div>
-            <div
-              className="hero__backdrop-item"
-              style={{backgroundImage: 'url("https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1")'}}
-            >
-              <div className="hero__backdrop-label">Smart Lighting</div>
-            </div>
-            <div
-              className="hero__backdrop-item"
-              style={{backgroundImage: 'url("https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1")'}}
-            >
-              <div className="hero__backdrop-label">WiFi Networks</div>
-            </div>
-            <div
-              className="hero__backdrop-item"
-              style={{backgroundImage: 'url("https://images.pexels.com/photos/96612/pexels-photo-96612.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1")'}}
-            >
-              <div className="hero__backdrop-label">Security Systems</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container hero__container">
-          <div className="hero__content">
+    <section id="hero" className="hero">
+      <div className="container hero__container">
+        <div className="hero__content">
+          {/* Left side - Text Content */}
+          <div className="hero__text-content">
             {/* Main heading */}
             <h1 className="hero__title">
-              Professional Home Installation{' '}
+              Professional Home{' '}
               <span className="hero__title-highlight">Services</span>
             </h1>
 
@@ -102,26 +56,24 @@ const Hero = () => {
                 View Services
               </button>
             </div>
+          </div>
 
-            {/* Key features */}
-            <div className="hero__features">
-              <div className="hero__feature">
-                <span className="hero__feature-icon">🇺🇸</span>
-                <span className="hero__feature-text">Veteran Owned</span>
-              </div>
-              <div className="hero__feature">
-                <span className="hero__feature-icon">⚡</span>
-                <span className="hero__feature-text">Professional Install</span>
-              </div>
-              <div className="hero__feature">
-                <span className="hero__feature-icon">🛡️</span>
-                <span className="hero__feature-text">40+ Years Experience</span>
-              </div>
-            </div>
+          {/* Right side - Logo */}
+          <div className="hero__logo-content">
+            <img
+              src="/logo.png"
+              alt="TechWave Home Solutions"
+              className="hero__logo-image hero__logo-large"
+              style={{
+                width: '540px !important',
+                transform: 'scale(2.16) !important',
+                maxWidth: '95% !important'
+              }}
+            />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 

@@ -7,11 +7,11 @@ import '../styles/Header.css'
  */
 const navItems: NavItem[] = [
   { id: 'home', label: 'Home', href: '#hero' },
-  { id: 'about', label: 'About', href: '#about' },
   { id: 'services', label: 'Services', href: '#services' },
   { id: 'gallery', label: 'Gallery', href: '#gallery' },
   { id: 'reviews', label: 'Reviews', href: '#reviews' },
   { id: 'contact', label: 'Contact', href: '#contact' },
+  { id: 'about', label: 'About Us', href: '#about' },
 ]
 
 /**
@@ -53,7 +53,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) => {
         {/* Logo and company name */}
         <div className="header__logo">
           <img
-            src="/logo.png"
+            src="/logo-small.png"
             alt="TechWave Home Solutions"
             className="header__logo-image"
             width="40"

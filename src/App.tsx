@@ -28,8 +28,8 @@ function App() {
         <Services />
         <Gallery />
         <Reviews />
-        <About />
         <Contact />
+        <About />
       </main>
       <Footer />
     </div>
