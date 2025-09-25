@@ -191,7 +191,7 @@ const Gallery = () => {
                 <div className="gallery__overlay">
                   <h3 className="gallery__item-title">{image.title}</h3>
                   <p className="gallery__item-category">{image.category}</p>
-                  <span className="gallery__view-icon" aria-hidden="true">🔍</span>
+                  <div className="gallery__view-icon" aria-hidden="true"></div>
                 </div>
               </div>
             </div>
@@ -234,26 +234,6 @@ const Gallery = () => {
           </div>
         )}
 
-        {/* Call to action */}
-        <div className="gallery__cta">
-          <div className="gallery__cta-content">
-            <h3 className="gallery__cta-title">Ready to See Your Project Here?</h3>
-            <p className="gallery__cta-description">
-              Let us bring the same level of quality and attention to detail to your home.
-            </p>
-            <button
-              className="gallery__cta-button"
-              onClick={() => {
-                const contactSection = document.querySelector('#contact')
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' })
-                }
-              }}
-            >
-              Start Your Project
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   )

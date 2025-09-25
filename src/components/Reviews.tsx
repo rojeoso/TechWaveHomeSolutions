@@ -102,26 +102,6 @@ const Reviews = () => {
           ))}
         </div>
 
-        {/* Call to action */}
-        <div className="reviews__cta">
-          <div className="reviews__cta-content">
-            <h3 className="reviews__cta-title">Ready to Join Our Satisfied Customers?</h3>
-            <p className="reviews__cta-description">
-              Experience the same professional service and attention to detail that our customers rave about.
-            </p>
-            <button
-              className="reviews__cta-button"
-              onClick={() => {
-                const contactSection = document.querySelector('#contact')
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' })
-                }
-              }}
-            >
-              Get Your Free Quote
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   )
