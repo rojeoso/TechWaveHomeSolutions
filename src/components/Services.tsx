@@ -1,4 +1,3 @@
-import type { Service } from '../types'
 import '../styles/Services.css'
 
 
