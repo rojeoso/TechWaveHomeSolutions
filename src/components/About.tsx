@@ -43,7 +43,7 @@ const About = () => {
               <h3 className="about__section-title">Our Values</h3>
               <div className="about__value-list">
                 <div className="about__value-item">
-                  <span className="about__value-icon">🇺🇸</span>
+                  <span className="about__value-icon">US</span>
                   <div>
                     <h4 className="about__value-title">Veteran Excellence</h4>
                     <p className="about__value-desc">
@@ -80,7 +80,7 @@ const About = () => {
               <span className="about__stat-label">Years Experience</span>
             </div>
             <div className="about__stat">
-              <span className="about__stat-number">🇺🇸</span>
+              <span className="about__stat-number">US</span>
               <span className="about__stat-label">Veteran Owned</span>
             </div>
             <div className="about__stat">
