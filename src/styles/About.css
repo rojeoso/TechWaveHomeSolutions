@@ -1,6 +1,6 @@
 /* About Section Styles */
 .about {
-  background: var(--background-light);
+  background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 100%);
 }
 
 .about__header {
