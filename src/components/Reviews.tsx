@@ -19,30 +19,30 @@ interface Review {
 const reviews: Review[] = [
   {
     id: '1',
-    name: 'Michael Johnson',
-    location: 'Sacramento, CA',
+    name: 'Marla L.',
+    location: 'Cooperas Cove, TX',
     service: 'TV Mount Installation',
     rating: 5,
     text: 'Excellent service! The team mounted our 75" TV perfectly with clean cable management. Very professional and arrived on time. The military precision really shows in their work.',
-    date: 'September 2024'
+    date: 'July 2024'
   },
   {
     id: '2',
-    name: 'Sarah Martinez',
-    location: 'Roseville, CA',
-    service: 'Wireless Mesh Network',
+    name: 'Andres Ovalle',
+    location: 'Temple, TX',
+    service: 'Professional Painting and Light Fixtures',
     rating: 5,
-    text: 'Finally have strong WiFi throughout our entire house! The mesh network setup was flawless and they explained everything clearly. Great communication and fair pricing.',
-    date: 'August 2024'
+    text: 'Had to remodel my home in order to sell it last minute. Were able to get it done in time with excellent quality!',
+    date: 'September 2024'
   },
   {
     id: '3',
-    name: 'David Thompson',
-    location: 'Folsom, CA',
+    name: 'Zulia Taylor',
+    location: 'Temple, TX',
     service: 'Security Camera System',
     rating: 5,
     text: 'The Lorex security system installation exceeded our expectations. Professional installation, great image quality, and the mobile app works perfectly. Highly recommended!',
-    date: 'July 2024'
+    date: 'March 2025'
   }
 ]
 
