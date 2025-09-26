@@ -81,7 +81,7 @@
 }
 
 .hero__title-highlight {
-  color: #A5ACAF;
+  color: var(--accent-color);
   position: relative;
 }
 
@@ -92,7 +92,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #A5ACAF, #FFFFFF);
+  background: linear-gradient(90deg, var(--accent-color), #FFFFFF);
   border-radius: 2px;
 }
 

@@ -1,9 +1,9 @@
 /* Base styles and CSS reset */
 :root {
-  /* Color palette - Professional neutral theme */
-  --primary-color: #374151;
-  --primary-dark: #1f2937;
-  --primary-light: #4b5563;
+  /* Color palette - Eagles green theme */
+  --primary-color: #004C55;
+  --primary-dark: #002A33;
+  --primary-light: #003440;
   --secondary-color: #6b7280;
   --secondary-light: #9ca3af;
   --accent-color: #14b8a6;
