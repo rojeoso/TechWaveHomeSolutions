@@ -36,7 +36,7 @@
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
   display: flex;
   align-items: flex-end;
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-xl) var(--spacing-2xl) var(--spacing-3xl) var(--spacing-2xl);
   transition: all var(--transition-normal);
 }
 
@@ -68,7 +68,7 @@
 .services__panel:hover .services__panel-details {
   transform: translateY(0);
   opacity: 1;
-  max-height: 300px;
+  max-height: 400px;
 }
 
 .services__panel-description {
