@@ -12,13 +12,6 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  // Handle navigation to sections
-  const scrollToSection = (sectionId: string) => {
-    const section = document.querySelector(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   return (
     <footer className="footer">
