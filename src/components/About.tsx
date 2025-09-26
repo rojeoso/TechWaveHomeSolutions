@@ -25,16 +25,15 @@ const About = () => {
               <p className="about__text">
                 TechWave Home Solutions is a proud veteran-owned business bringing over 40 years
                 of combined experience in home technology and remodeling services. Founded on the
-                principles of service, integrity, and excellence that we learned in the military.
+                principles of service, integrity, and excellence.
               </p>
               <p className="about__text">
                 We specialize in professional installation services including TV mounting, sound systems,
                 wireless mesh networks, Lorex security cameras, home lighting, and complete remodeling
-                projects. Our attention to detail and commitment to quality reflects our military training.
+                projects. In every job we excel in attention to detail and commitment to quality.
               </p>
               <p className="about__text">
-                Every project is completed with the same precision and dedication that we brought to
-                our military service. We treat your home with the respect it deserves and deliver
+                We treat your home with the respect it deserves and deliver
                 results that exceed expectations.
               </p>
             </div>
@@ -81,12 +80,8 @@ const About = () => {
               <span className="about__stat-label">Years Experience</span>
             </div>
             <div className="about__stat">
-              <span className="about__stat-number about__stat-number--emoji">🇺🇸</span>
+              <span className="about__stat-number">🇺🇸</span>
               <span className="about__stat-label">Veteran Owned</span>
-            </div>
-            <div className="about__stat">
-              <span className="about__stat-number">500+</span>
-              <span className="about__stat-label">Satisfied Customers</span>
             </div>
             <div className="about__stat">
               <span className="about__stat-number">24/7</span>
