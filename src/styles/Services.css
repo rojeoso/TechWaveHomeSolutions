@@ -288,26 +288,54 @@
 /* Mobile Styles */
 @media (max-width: 480px) {
   .services__panels {
-    height: 50vh;
+    height: auto;
   }
 
   .services__panels-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: none;
+    gap: var(--spacing-md);
+  }
+
+  .services__panel {
+    min-height: 200px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+  }
+
+  .services__panel-overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+    padding: var(--spacing-lg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   .services__panel-details {
-    position: static;
-    transform: none;
+    transform: translateY(0);
     opacity: 1;
     max-height: none;
     overflow: visible;
   }
 
-  .services__panel-overlay {
-    position: static;
-    background: rgba(0, 0, 0, 0.8);
-    padding: var(--spacing-lg);
+  .services__panel-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .services__panel-features {
+    display: none;
+  }
+
+  .services__panel-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
   }
 
   .services__grid {
@@ -334,6 +362,49 @@
 
   .services__cta-title {
     font-size: 1.75rem;
+  }
+}
+
+/* Landscape Phone / Small Tablet */
+@media (min-width: 481px) and (max-width: 767px) {
+  .services__panels {
+    height: 50vh;
+  }
+
+  .services__panels-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: var(--spacing-sm);
+  }
+
+  .services__panel-details {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all var(--transition-normal);
+  }
+
+  .services__panel:hover .services__panel-details {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .services__panel-description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .services__panel-features {
+    display: none;
+  }
+
+  .services__panel-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .services__panel-overlay {
+    padding: var(--spacing-md);
   }
 }
 
