@@ -34,12 +34,11 @@ const servicePanels = [
   {
     id: 'smart-lighting',
     title: 'Smart Lighting',
-    description: 'Complete lighting solutions including fixture installation, smart lighting, and electrical work.',
+    description: 'Complete lighting solutions including fixture installation, and smart lighting.',
     features: [
       'Light fixture installation',
       'Smart lighting systems',
       'Dimmer switch installation',
-      'Electrical troubleshooting',
       'Energy-efficient LED upgrades'
     ],
     backgroundImage: '/Light.jpg'
