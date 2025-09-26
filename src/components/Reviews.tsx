@@ -71,7 +71,7 @@ const Reviews = () => {
         <div className="reviews__header text-center">
           <h2 className="reviews__title">What Our Customers Say</h2>
           <p className="reviews__subtitle">
-            Real reviews from satisfied customers across the Sacramento area
+            Real reviews from satisfied customers across the Central Texas area
           </p>
         </div>
 

@@ -36,7 +36,7 @@ const Hero = () => {
             {/* Subheading */}
             <p className="hero__subtitle">
               Expert installation of TV mounts, sound systems, wireless networks, security cameras,
-              lighting, and home remodeling. Veteran-owned with 40+ years of combined experience.
+              lighting/fixtures, and home remodeling. Veteran-owned with 40+ years of combined experience.
             </p>
 
             {/* Call to action buttons */}
