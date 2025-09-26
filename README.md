@@ -59,7 +59,7 @@ src/
 - **Sound System Installation** - Surround sound, soundbars, and multi-room audio
 - **Wireless Mesh Networks** - Whole-home WiFi coverage and optimization
 - **Security Camera Systems** - Lorex security cameras with mobile monitoring
-- **Home Lighting & Fixtures** - Smart lighting systems and electrical work
+- **Home Lighting & Fixtures** - Smart lighting systems
 - **Home Remodel Services** - Kitchen, bathroom, and custom installations
 
 ## 🇺🇸 Veteran-Owned Business
