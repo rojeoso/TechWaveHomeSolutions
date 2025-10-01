@@ -235,7 +235,7 @@ const Contact = () => {
                 <div className="contact__info-content">
                   <h4 className="contact__info-label">Phone</h4>
                   <p className="contact__info-text">
-                    <a href="tel:+1-555-0123">(512) 655-3545</a>
+                    <a href="tel:+1-555-0123">+1 (512) 655-3545</a>
                   </p>
                 </div>
               </div>
