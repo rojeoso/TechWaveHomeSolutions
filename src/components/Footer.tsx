@@ -32,7 +32,7 @@ const Footer = () => {
               </span>
             </div>
             <div className="footer__contact-inline">
-              <a href="tel:+1-555-0123" className="footer__contact-link">(555) 123-TECH</a>
+              <a href="tel:+1-555-0123" className="footer__contact-link">+1 (512) 655-3545</a>
               <span className="footer__separator">|</span>
               <a href="mailto:info@techwave.com" className="footer__contact-link">info@techwave.com</a>
             </div>
