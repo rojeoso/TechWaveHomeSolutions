@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import type { ContactForm } from '../types'
 import '../styles/Contact.css'
 
@@ -66,7 +67,7 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0
   }
 
-  // Handle form submission - sends email to both recipients
+  // Handle form submission - sends email to both recipients using EmailJS
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -77,35 +78,44 @@ const Contact = () => {
     setIsSubmitting(true)
 
     try {
-      // Create email content
-      const emailContent = {
+      // Get EmailJS credentials from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+      // Check if EmailJS is configured
+      if (!serviceId || !templateId || !publicKey) {
+        console.error('EmailJS is not configured. Please set up your .env file.')
+        alert('Email service is not configured. Please contact us directly at rojelio@techwavehome.work or reggie@techwavehome.work')
+        setIsSubmitting(false)
+        return
+      }
+
+      // Template parameters that will be used in the EmailJS template
+      const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone || 'Not provided',
         message: formData.message,
-        to_emails: 'rojelio@techwavehome.work, reggie@techwavehome.work'
+        to_email: 'rojelio@techwavehome.work, reggie@techwavehome.work'
       }
 
-      // For now, we'll simulate the email sending
-      // In production, you would use EmailJS, a backend API, or a form service like Netlify Forms
-      console.log('Sending email to:', emailContent.to_emails)
-      console.log('Email content:', emailContent)
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      )
 
-      // Simulate email sending delay
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      console.log('Email sent successfully:', result)
 
       setIsSubmitted(true)
       setFormData({ name: '', email: '', phone: '', message: '' })
 
-      // You can implement actual email sending here using:
-      // 1. EmailJS: https://www.emailjs.com/
-      // 2. Netlify Forms: https://docs.netlify.com/forms/setup/
-      // 3. Formspree: https://formspree.io/
-      // 4. Your own backend API
-
     } catch (error) {
       console.error('Error submitting form:', error)
-      // Handle error (show error message to user)
+      alert('There was an error sending your message. Please try again or contact us directly at rojelio@techwavehome.work')
     } finally {
       setIsSubmitting(false)
     }
