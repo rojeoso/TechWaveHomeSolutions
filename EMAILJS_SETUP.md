@@ -1,39 +1,53 @@
-# EmailJS Setup Instructions
+# EmailJS Setup for TechWave Home Solutions
 
-This guide will help you configure EmailJS to enable the contact form to send emails to both rojelio@techwavehome.work and reggie@techwavehome.work.
+## Overview
 
-## Step 1: Create EmailJS Account
+Your contact form uses EmailJS to send emails directly from the browser to `info@techwavehome.work`. This is simple, works perfectly with Cloudflare Pages, and requires no backend server.
 
-1. Go to [EmailJS](https://www.emailjs.com/)
-2. Click "Sign Up" and create a free account
-3. Verify your email address
+## Current Status
 
-## Step 2: Add Email Service
+Your EmailJS credentials are already configured in `.env`:
+- Service ID: `service_4jwf5k9`
+- Template ID: `template_16vhvlf`
+- Public Key: `zUl0BiKxOPK_u8_Th`
 
-1. In the EmailJS dashboard, go to "Email Services"
-2. Click "Add New Service"
-3. Choose your email provider (Gmail, Outlook, etc.)
-4. Follow the instructions to connect your email account
-5. **Important:** Use an email account that you have access to (e.g., your company Gmail)
-6. Copy the **Service ID** - you'll need this later
+## What You Need to Do
 
-## Step 3: Create Email Template
+### Update EmailJS Template Recipient
 
-1. In the EmailJS dashboard, go to "Email Templates"
-2. Click "Create New Template"
-3. Set up the template with the following configuration:
+You need to log into EmailJS and update your email template to send to `info@techwavehome.work`:
 
-### Template Settings:
-- **Template Name:** Contact Form Submission (or any name you prefer)
-- **Subject:** New Contact Form Submission from {{from_name}}
+1. Go to [EmailJS Dashboard](https://dashboard.emailjs.com/)
+2. Click on **Email Templates**
+3. Select your template (`template_16vhvlf`)
+4. In the template settings, find the **"To Email"** field
+5. Change it to: `info@techwavehome.work`
+6. Click **Save**
 
-### Template Content:
+### Template Variables
+
+Make sure your EmailJS template includes these variables:
+- `{{from_name}}` - Customer's name
+- `{{from_email}}` - Customer's email
+- `{{phone}}` - Customer's phone (optional)
+- `{{message}}` - Customer's message
+- `{{to_email}}` - Recipient email (info@techwavehome.work)
+
+### Example Template Content
+
+**Subject:**
+```
+New Contact Form Submission from {{from_name}}
+```
+
+**Body:**
 ```
 You have received a new message from the TechWave Home Solutions contact form:
 
 Name: {{from_name}}
 Email: {{from_email}}
 Phone: {{phone}}
+
 Message:
 {{message}}
 
@@ -41,64 +55,81 @@ Message:
 This email was sent from the TechWave Home Solutions website contact form.
 ```
 
-### Important Template Configuration:
-- In the template settings, find the **"To Email"** field
-- Enter: `rojelio@techwavehome.work, reggie@techwavehome.work`
-- This ensures emails are sent to both addresses
+## How It Works
 
-4. Click "Save"
-5. Copy the **Template ID** - you'll need this later
+1. User fills out contact form on your website
+2. EmailJS sends the email directly from the browser
+3. Email arrives at `info@techwavehome.work`
+4. User sees success message
 
-## Step 4: Get Your Public Key
+## Local Testing
 
-1. In the EmailJS dashboard, go to "Account" → "General"
-2. Find your **Public Key** (also called API Key)
-3. Copy the **Public Key**
-
-## Step 5: Configure Environment Variables
-
-1. In your project root directory, create a `.env` file (copy from `.env.example`)
-2. Add your EmailJS credentials:
-
-```env
-VITE_EMAILJS_SERVICE_ID=your_service_id_here
-VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
-VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+```bash
+npm run dev
 ```
 
-3. Replace the placeholder values with your actual EmailJS credentials from the previous steps
+Visit `http://localhost:5173`, fill out the contact form, and submit. The email will be sent via EmailJS.
 
-## Step 6: Test the Contact Form
+## Deployment to Cloudflare Pages
 
-1. Start your development server: `npm run dev`
-2. Navigate to the contact form
-3. Fill out and submit a test message
-4. Check both email addresses (rojelio@techwavehome.work and reggie@techwavehome.work) for the test email
+EmailJS works automatically on Cloudflare Pages - no special configuration needed!
 
-## Important Notes
+1. Build your site: `npm run build`
+2. Deploy to Cloudflare Pages (via Git or dashboard)
+3. Done! The contact form will work in production.
 
-- **Free Tier Limit:** EmailJS free tier allows 200 emails per month
-- **Email Delivery:** Emails are sent from your connected email service to both recipients
-- **Security:** Never commit your `.env` file to version control (it's already in `.gitignore`)
-- **Production:** When deploying, add the environment variables to your hosting platform (Netlify, Vercel, etc.)
+**Important:** The EmailJS environment variables (`VITE_EMAILJS_*`) are baked into your build, so Cloudflare Pages doesn't need any environment variables set.
 
 ## Troubleshooting
 
 ### Emails not being received?
-1. Check your EmailJS dashboard for error logs
-2. Verify the email addresses in the template are correct
-3. Check spam/junk folders
-4. Ensure your EmailJS service is active and verified
+
+1. **Check EmailJS Dashboard:**
+   - Go to EmailJS dashboard
+   - Check usage/logs for errors
+   - Verify your email service is connected
+
+2. **Check spam/junk folder:**
+   - Emails might be going to spam
+   - Add info@techwavehome.work to your contacts
+
+3. **Verify template recipient:**
+   - Make sure template sends to `info@techwavehome.work`
+   - Not the old emails (rojelio@ or reggie@)
+
+4. **Check free tier limit:**
+   - EmailJS free tier: 200 emails/month
+   - If exceeded, upgrade or wait for monthly reset
 
 ### "Email service is not configured" error?
-1. Verify your `.env` file exists in the project root
-2. Check that all three environment variables are set correctly
-3. Restart your development server after creating/modifying `.env`
 
-### Rate limit exceeded?
-- You've hit the 200 emails/month limit on the free tier
-- Consider upgrading to a paid plan or using a different service
+1. Check `.env` file has all three variables set
+2. Restart your dev server: `npm run dev`
+
+### How to test if EmailJS credentials work?
+
+Run your site locally (`npm run dev`), fill out the form, and check:
+1. Browser console for errors
+2. Network tab to see the EmailJS API call
+3. info@techwavehome.work inbox for the email
+
+## Why EmailJS?
+
+- ✅ Simple - No backend server needed
+- ✅ Works with Cloudflare Pages (static hosting)
+- ✅ Free tier: 200 emails/month
+- ✅ Client-side (works in browser)
+- ✅ Reliable delivery
+- ✅ Easy to set up
 
 ## Support
 
-For EmailJS-specific issues, visit [EmailJS Documentation](https://www.emailjs.com/docs/)
+- EmailJS Documentation: https://www.emailjs.com/docs/
+- EmailJS Dashboard: https://dashboard.emailjs.com/
+
+## Next Steps
+
+1. Update your EmailJS template to send to `info@techwavehome.work`
+2. Test locally with `npm run dev`
+3. Deploy to Cloudflare Pages
+4. Done!
