@@ -67,7 +67,7 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0
   }
 
-  // Handle form submission - sends email to both recipients using EmailJS
+  // Handle form submission - sends email using EmailJS
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -86,7 +86,7 @@ const Contact = () => {
       // Check if EmailJS is configured
       if (!serviceId || !templateId || !publicKey) {
         console.error('EmailJS is not configured. Please set up your .env file.')
-        alert('Email service is not configured. Please contact us directly at rojelio@techwavehome.work or reggie@techwavehome.work')
+        alert('Email service is not configured. Please contact us directly at info@techwavehome.work')
         setIsSubmitting(false)
         return
       }
@@ -97,7 +97,7 @@ const Contact = () => {
         from_email: formData.email,
         phone: formData.phone || 'Not provided',
         message: formData.message,
-        to_email: 'rojelio@techwavehome.work, reggie@techwavehome.work'
+        to_email: 'info@techwavehome.work'
       }
 
       // Send email using EmailJS
@@ -115,7 +115,7 @@ const Contact = () => {
 
     } catch (error) {
       console.error('Error submitting form:', error)
-      alert('There was an error sending your message. Please try again or contact us directly at rojelio@techwavehome.work')
+      alert('There was an error sending your message. Please try again or contact us directly at info@techwavehome.work')
     } finally {
       setIsSubmitting(false)
     }
@@ -255,8 +255,7 @@ const Contact = () => {
                 <div className="contact__info-content">
                   <h4 className="contact__info-label">Email</h4>
                   <p className="contact__info-text">
-                    <a href="mailto:rojelio@techwavehome.work">rojelio@techwavehome.work</a><br />
-                    <a href="mailto:reggie@techwavehome.work">reggie@techwavehome.work</a>
+                    <a href="mailto:info@techwavehome.work">info@techwavehome.work</a>
                   </p>
                 </div>
               </div>
